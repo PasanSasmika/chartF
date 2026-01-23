@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 // 1. Export API_BASE so we can use it for the Export Button in page.tsx
-export const API_BASE = "http://localhost:5000/api/analytics"; 
+export const API_BASE = process.env.NEXT_PUBLIC_API_BASE_URL as string;
 
 export const fetchAnalytics = async (startDate: string, endDate: string) => {
   const params = { startDate, endDate };
