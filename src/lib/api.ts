@@ -98,3 +98,15 @@ export const fetchCourseStudents = async (startDate: string, endDate: string, co
     return [];
   }
 };
+
+export const fetchAllCertificates = async (page = 1, limit = 10, search = "") => {
+  try {
+    const response = await axios.get(`${API_BASE}/all-certificates`, {
+      params: { page, limit, search }
+    });
+    return response.data;
+  } catch (error) {
+    console.error("API Error", error);
+    return { data: [], pagination: { total: 0, totalPages: 0 } };
+  }
+};

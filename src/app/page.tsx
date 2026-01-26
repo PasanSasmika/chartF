@@ -7,7 +7,8 @@ import {
 } from "recharts";
 import { 
   Users, FileBadge, Globe, BookOpen, Download, Calendar, 
-  Clock, Activity, Plus, TrendingUp, Trophy, X, Loader2, Mail, MapPin, Award
+  Clock, Activity, Plus, TrendingUp, Trophy, X, Loader2, Mail, MapPin, Award,
+  LayoutTemplate
 } from "lucide-react";
 import { API_BASE, fetchAnalytics, fetchKpiDetails, searchStudent } from "@/lib/api"; 
 import dynamic from "next/dynamic";
@@ -168,6 +169,12 @@ export default function Dashboard() {
                   <button onClick={handleExport} className="flex-1 sm:flex-none flex items-center justify-center gap-2 px-5 py-2.5 bg-white border border-slate-200 hover:bg-slate-50 text-slate-700 text-sm font-semibold rounded-xl transition-all shadow-sm active:scale-95">
                     <Download className="w-4 h-4 text-slate-500" /> <span className="hidden sm:inline">Export</span>
                   </button>
+                </div>
+                <div className="flex gap-2">
+                  <Link href="/template" className="flex-1 sm:flex-none flex items-center justify-center gap-2 px-5 py-2.5 bg-blue-600 hover:bg-blue-700 text-white text-sm font-semibold rounded-xl transition-all shadow-sm active:scale-95">
+                    <LayoutTemplate className="w-4 h-4" /> <span>All Records</span>
+                  </Link>
+    
                 </div>
               </div>
             </header>
